@@ -53,5 +53,6 @@ jobs:
 
       # Step 3: Deploy the application using Docker Compose (or another strategy)
       - name: Deploy using Docker Compose
+        working-directory: .
         run: |
           docker compose up -d
