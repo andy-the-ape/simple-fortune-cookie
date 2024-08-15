@@ -44,15 +44,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Build]
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Pull frontend Docker image
         run: |
           docker pull andytheape/fortune-cookie-frontend:latest
       - name: Pull backend Docker image
         run: |
           docker pull andytheape/fortune-cookie-backend:latest
-
-      # Step 3: Deploy the application using Docker Compose (or another strategy)
       - name: Deploy using Docker Compose
-        working-directory: .
         run: |
           docker compose up -d
