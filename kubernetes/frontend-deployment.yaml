@@ -15,7 +15,7 @@ spec:
         app: frontend
     spec:
       containers:
-      - name: frontend
+      - name: frontend-pod
         image: andytheape/fortune-cookie-frontend:latest
         imagePullPolicy: Always
         env:
