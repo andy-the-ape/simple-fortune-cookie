@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: fortune-cookie
   labels:
     app: cookie-app
 spec:
