@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: fortune-cookie-backend
-        image: andytheape/fortune-cookie-backend:latest
+        image: andytheape/fortune-cookie-backend
         imagePullPolicy: Always
         resources: {}
         ports:
