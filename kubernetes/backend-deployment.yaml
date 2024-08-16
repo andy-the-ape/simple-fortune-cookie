@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: fortune-cookie-backend
+        image: andytheape/fortune-cookie-backend:latest
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+        - containerPort: 9000
