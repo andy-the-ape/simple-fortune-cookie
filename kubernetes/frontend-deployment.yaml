@@ -18,6 +18,10 @@ spec:
       containers:
       - name: fortune-cookie-frontend
         image: andytheape/fortune-cookie-frontend:latest
-        resources: {}
+        env:
+          - name: BACKEND_PORT
+            value: "9000"
+          - name: BACKEND_DNS
+            value: "backend-service"
         ports:
         - containerPort: 8080

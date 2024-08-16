@@ -18,6 +18,5 @@ spec:
       containers:
       - name: fortune-cookie-backend
         image: andytheape/fortune-cookie-backend:latest
-        resources: {}
         ports:
         - containerPort: 9000
