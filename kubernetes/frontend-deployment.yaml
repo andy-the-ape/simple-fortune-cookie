@@ -9,14 +9,13 @@ spec:
   selector:
     matchLabels:
       app: frontend
-  strategy: {}
   template:
     metadata:
       labels:
         app: frontend
     spec:
       containers:
-      - name: fortune-cookie-frontend
+      - name: frontend
         image: andytheape/fortune-cookie-frontend:latest
         env:
           - name: BACKEND_PORT

@@ -9,14 +9,13 @@ spec:
   selector:
     matchLabels:
       app: backend
-  strategy: {}
   template:
     metadata:
       labels:
         app: backend
     spec:
       containers:
-      - name: fortune-cookie-backend
+      - name: backend
         image: andytheape/fortune-cookie-backend:latest
         ports:
         - containerPort: 9000
