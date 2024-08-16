@@ -16,4 +16,3 @@ spec:
       value: "backend-service"
     ports:
     - containerPort: 8080
-    restartPolicy: Always
