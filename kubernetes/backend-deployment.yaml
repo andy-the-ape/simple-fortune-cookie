@@ -3,11 +3,13 @@ kind: Deployment
 metadata:
   name: backend
   labels:
-    app: backend
+    app: cookie-app
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: backend
+  strategy: {}
   template:
     metadata:
       labels:
