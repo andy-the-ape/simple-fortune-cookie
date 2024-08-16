@@ -17,5 +17,6 @@ spec:
       containers:
       - name: backend
         image: andytheape/fortune-cookie-backend:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 9000
