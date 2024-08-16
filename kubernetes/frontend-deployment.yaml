@@ -5,6 +5,7 @@ metadata:
   labels:
     app: frontend
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: frontend
@@ -14,9 +15,13 @@ spec:
         app: frontend
     spec:
       containers:
-      - name: fortune-cookie-frontend
+      - name: frontend-pod
         image: andytheape/fortune-cookie-frontend:latest
         imagePullPolicy: Always
-        resources: {}
+        env:
+          - name: BACKEND_PORT
+            value: "9000"
+          - name: BACKEND_DNS
+            value: "backend-service"
         ports:
         - containerPort: 8080
