@@ -58,7 +58,7 @@ jobs:
 
   Deploy-Kubernetes-Cluster:
     runs-on: ubuntu-latest
-    needs: [Deploy-Docker-Compose]
+    needs: [Build]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
