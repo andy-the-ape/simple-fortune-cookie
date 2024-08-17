@@ -72,4 +72,5 @@ jobs:
     needs: [Deploy-Kubernetes-Cluster]
     steps:
       - name: Test Application Availability
-        run: ./test-availability.sh
+        working-directory: ./
+        run: test-availability.sh
