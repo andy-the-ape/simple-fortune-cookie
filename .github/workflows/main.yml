@@ -66,3 +66,14 @@ jobs:
         run: echo "${{ secrets.KUBECONFIG }}" | base64 -d > kubeconfig
       - name: Deploy to Kubernetes
         run: kubectl --kubeconfig kubeconfig apply -f kubernetes/
+  
+  Test-Availability:
+    runs-on: ubuntu-latest
+    needs: [Deploy-Kubernetes-Cluster]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v1
+      - name: Run Test Script
+        run: ./test-availability.sh
