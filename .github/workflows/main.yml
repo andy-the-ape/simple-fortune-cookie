@@ -72,7 +72,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Deploy-Kubernetes-Cluster]
     steps:
-      - name: Clone down repository
+      - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Download kubeconfig
+        uses: actions/download-artifact@v4
+        with:
+          name: kubeconfig
+      - name: Use kubeconfig for kubectl
+        run: export KUBECONFIG=$(pwd)/kubeconfig
+      - name: Make test script executable
+        run: chmod +x ./test-availability.sh
       - name: Test Application Availability
         run: bash ./test-availability.sh
