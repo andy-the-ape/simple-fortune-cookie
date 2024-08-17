@@ -66,6 +66,7 @@ jobs:
         run: echo "${{ secrets.KUBECONFIG }}" | base64 -d > kubeconfig
       - name: Deploy to Kubernetes
         run: kubectl --kubeconfig kubeconfig apply -f kubernetes/
+    
   
   Test-Availability:
     runs-on: ubuntu-latest
@@ -74,5 +75,4 @@ jobs:
       - name: Clone down repository
         uses: actions/checkout@v4
       - name: Test Application Availability
-        working-directory: ./
-        run: test-availability.sh
+        run: bash ./test-availability.sh
